@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.Form1.resources
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.Properties.Resources.resources
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.csproj.GenerateResource.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Vision_UI.exe.config
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Vision_UI.exe
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Vision_UI.pdb
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Cognex.InSight.Controls.Display.dll
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Cognex.InSight.dll
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Cognex.InSight.xml
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Cognex.InSight.Controls.Display.xml
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.csproj.Up2Date
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.exe
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.pdb

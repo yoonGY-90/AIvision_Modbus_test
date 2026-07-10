@@ -255,5 +255,75 @@ namespace CordingArrayKitMoudbusRTU
                 _master.WriteMultipleRegisters(1, 20, secondData);
             }
         }
+
+        private void btnServoP_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                try
+                {
+                    // 1. 현재 텍스트박스에 써있는 숫자를 읽어옵니다. (비어있으면 0으로 시작)
+                    int currentAngle = 0;
+                    if (!string.IsNullOrEmpty(tbxServo.Text))
+                    {
+                        int.TryParse(tbxServo.Text, out currentAngle);
+                    }
+
+                    // 2. 최대값인 200보다 작을 때만 값을 5씩 증가시킵니다. (원하는 단위로 변경 가능)
+                    if (currentAngle < 200)
+                    {
+                        currentAngle += 10;
+
+                        // 혹시라도 200을 넘어가면 200으로 안전하게 고정
+                        if (currentAngle > 200) currentAngle = 200;
+
+                        // 3. UI 텍스트박스 글자 업데이트
+                        tbxServo.Text = currentAngle.ToString();
+
+                        // 4. 모드버스 31번 레지스터에 데이터 전송
+                        _master.WriteSingleRegister(1, 31, (ushort)currentAngle);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("서보 제어 오류: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnServoM_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                try
+                {
+                    // 1. 현재 텍스트박스에 써있는 숫자를 읽어옵니다.
+                    int currentAngle = 0;
+                    if (!string.IsNullOrEmpty(tbxServo.Text))
+                    {
+                        int.TryParse(tbxServo.Text, out currentAngle);
+                    }
+
+                    // 2. 최소값인 0보다 클 때만 값을 5씩 감소시킵니다.
+                    if (currentAngle > 0)
+                    {
+                        currentAngle -= 10;
+
+                        // 혹시라도 0보다 작아지면 0으로 안전하게 고정
+                        if (currentAngle < 0) currentAngle = 0;
+
+                        // 3. UI 텍스트박스 글자 업데이트
+                        tbxServo.Text = currentAngle.ToString();
+
+                        // 4. 모드버스 31번 레지스터에 데이터 전송
+                        _master.WriteSingleRegister(1, 31, (ushort)currentAngle);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("서보 제어 오류: " + ex.Message);
+                }
+            }
+        }
     }
 }

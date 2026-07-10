@@ -79,12 +79,12 @@
             this.btnEcho = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tbxLCDWrite = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.tbxServo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnServoM = new System.Windows.Forms.Button();
+            this.btnServoP = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -567,12 +567,23 @@
             this.tbxLCDWrite.Size = new System.Drawing.Size(215, 48);
             this.tbxLCDWrite.TabIndex = 1;
             // 
+            // btnWrite
+            // 
+            this.btnWrite.Font = new System.Drawing.Font("굴림", 11F);
+            this.btnWrite.Location = new System.Drawing.Point(65, 74);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(75, 24);
+            this.btnWrite.TabIndex = 0;
+            this.btnWrite.Text = "출력";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.textBox1);
+            this.groupBox9.Controls.Add(this.tbxServo);
             this.groupBox9.Controls.Add(this.label12);
-            this.groupBox9.Controls.Add(this.button3);
-            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Controls.Add(this.btnServoM);
+            this.groupBox9.Controls.Add(this.btnServoP);
             this.groupBox9.Location = new System.Drawing.Point(630, 275);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(193, 100);
@@ -580,13 +591,13 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Servo Control";
             // 
-            // textBox1
+            // tbxServo
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 11F);
-            this.textBox1.Location = new System.Drawing.Point(92, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 24);
-            this.textBox1.TabIndex = 1;
+            this.tbxServo.Font = new System.Drawing.Font("굴림", 11F);
+            this.tbxServo.Location = new System.Drawing.Point(92, 30);
+            this.tbxServo.Name = "tbxServo";
+            this.tbxServo.Size = new System.Drawing.Size(91, 24);
+            this.tbxServo.TabIndex = 1;
             // 
             // label12
             // 
@@ -598,36 +609,27 @@
             this.label12.TabIndex = 2;
             this.label12.Text = "현재 각도 : ";
             // 
-            // button3
+            // btnServoM
             // 
-            this.button3.Font = new System.Drawing.Font("굴림", 11F);
-            this.button3.Location = new System.Drawing.Point(108, 63);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnServoM.Font = new System.Drawing.Font("굴림", 11F);
+            this.btnServoM.Location = new System.Drawing.Point(108, 63);
+            this.btnServoM.Name = "btnServoM";
+            this.btnServoM.Size = new System.Drawing.Size(75, 23);
+            this.btnServoM.TabIndex = 1;
+            this.btnServoM.Text = "-";
+            this.btnServoM.UseVisualStyleBackColor = true;
+            this.btnServoM.Click += new System.EventHandler(this.btnServoM_Click);
             // 
-            // button2
+            // btnServoP
             // 
-            this.button2.Font = new System.Drawing.Font("굴림", 11F);
-            this.button2.Location = new System.Drawing.Point(6, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnWrite
-            // 
-            this.btnWrite.Font = new System.Drawing.Font("굴림", 11F);
-            this.btnWrite.Location = new System.Drawing.Point(65, 74);
-            this.btnWrite.Name = "btnWrite";
-            this.btnWrite.Size = new System.Drawing.Size(75, 24);
-            this.btnWrite.TabIndex = 0;
-            this.btnWrite.Text = "출력";
-            this.btnWrite.UseVisualStyleBackColor = true;
-            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            this.btnServoP.Font = new System.Drawing.Font("굴림", 11F);
+            this.btnServoP.Location = new System.Drawing.Point(6, 63);
+            this.btnServoP.Name = "btnServoP";
+            this.btnServoP.Size = new System.Drawing.Size(75, 23);
+            this.btnServoP.TabIndex = 0;
+            this.btnServoP.Text = "+";
+            this.btnServoP.UseVisualStyleBackColor = true;
+            this.btnServoP.Click += new System.EventHandler(this.btnServoP_Click);
             // 
             // Form1
             // 
@@ -721,9 +723,9 @@
         private System.Windows.Forms.Button btnEcho;
         private System.Windows.Forms.TextBox tbxLCDWrite;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnServoM;
+        private System.Windows.Forms.Button btnServoP;
+        private System.Windows.Forms.TextBox tbxServo;
         private System.Windows.Forms.Button btnWrite;
     }
 }
