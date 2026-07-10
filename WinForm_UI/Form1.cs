@@ -1,0 +1,218 @@
+﻿using Modbus.Device;
+using Modbus.Extensions.Enron;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO.Ports;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CordingArrayKitMoudbusRTU
+{
+
+    public partial class Form1 : Form
+    {
+        SerialPort _port;
+        ModbusSerialMaster _master;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // 시리얼 가상 포트 검색해서 콤보박스에 추가
+            string[] portlist = SerialPort.GetPortNames();
+            foreach (string port in portlist)
+            {
+                cbxSerialport.Items.Add(port);
+            }
+
+        }
+
+        private void cbxSerialport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string portName = cbxSerialport.SelectedItem.ToString();
+            _port = new SerialPort(portName, 9600); //port 번호 : com?, 속도 9600
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _port.DataBits = 8;
+                _port.StopBits = StopBits.One;
+                _port.Parity = Parity.None;
+                _port.ReadTimeout = 2000;
+                _port.WriteTimeout = 2000;
+                _port.Open();
+
+                _master = ModbusSerialMaster.CreateRtu(_port);
+                btnConnect.Text = "Connected";
+                btnDisconnect.Text = "Disconnect";
+                btnConnect.Enabled = false;
+                btnDisconnect.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("시리얼 장치 연결 필요(" + ex.Message.ToString() + ")");
+            }
+        }
+
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            _port.Close();
+            btnConnect.Text = "Connect";
+            btnDisconnect.Text = "Disconnected";
+            btnConnect.Enabled = true;
+            btnDisconnect.Enabled = false;
+        }
+
+        private void btnLEDOn_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                // WriteSingleCoil 국번 1 어드래스 0(아두이노에서는 1), on:true
+                _master.WriteSingleCoil(1, 1, true);
+            }
+        }
+
+        private void btnLEDOff_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                // WriteSingleCoil 국번 1 어드래스 0(아두이노에서는 1), off:false
+                _master.WriteSingleCoil(1, 1, false);
+            }
+        }
+
+        private void trbR_Scroll(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                int Rvalue = trbR.Value;
+                _master.WriteSingleRegister(1, 5, (ushort)Rvalue);
+            }
+        }
+
+        private void trbG_Scroll(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                int Gvalue = trbG.Value;
+                _master.WriteSingleRegister(1, 6, (ushort)Gvalue);
+            }
+        }
+
+        private void trbB_Scroll(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                int Bvalue = trbB.Value;
+                _master.WriteSingleRegister(1, 7, (ushort)Bvalue);
+            }
+        }
+
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                var btn_temp = _master.ReadInputs(1, 3, 2);
+                // btn_temp[0] 푸쉬버튼의 상태값
+                if (btn_temp[0]) 
+                    {
+                        lblPB.BackColor = Color.DarkRed;
+                    }
+                    else
+                    {
+                        lblPB.BackColor = Color.BlueViolet;
+                    }
+
+                    if (btn_temp[1])
+                    {
+                        
+                        lblTB.BackColor = Color.DarkRed;
+                    }
+                    else
+                        {
+                            lblTB.BackColor = Color.BlueViolet;
+                        }
+                    
+            }
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                var btn_temp = _master.ReadInputs(1, 3, 2);
+                // btn_temp[0] 푸쉬버튼의 상태값
+                if (btn_temp[0])
+                {
+                    lblPB.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    lblPB.BackColor = Color.BlueViolet;
+                }
+
+                if (btn_temp[1])
+                {
+
+                    lblTB.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    lblTB.BackColor = Color.BlueViolet;
+                }
+            }
+        }
+
+        private void btnTOn_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void btnTOff_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+        }
+
+        private void btnT2On_Click(object sender, EventArgs e)
+        {
+            timer2.Enabled = true;
+        }
+
+        private void btnT2Off_Click(object sender, EventArgs e)
+        {
+            timer2.Enabled = false;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                var Analogdata = _master.ReadHoldingRegisters(1, 0, 5);
+                tbxTemp.Text = (Analogdata[0] * 0.01f).ToString("N2");
+                pgbTemp.Value = Convert.ToInt16(Analogdata[0] * 0.01f);
+                tbxHumi.Text = (Analogdata[1] * 0.01f).ToString("N2");
+                pgbHumi.Value = Convert.ToInt16(Analogdata[1] * 0.01f);
+                tbxCDS.Text = (Analogdata[2]).ToString("N2");
+                pgbCDS.Value = Convert.ToInt16(Analogdata[2]);
+                tbxPoten.Text = (Analogdata[3]).ToString("N2");
+                pgbPoten.Value = Convert.ToInt16(Analogdata[3]);
+                tbxHall.Text = (Analogdata[4]).ToString("N2");
+                pgbHall.Value = Convert.ToInt16(Analogdata[4]);
+
+
+                
+            }
+        }
+    }    
+}
