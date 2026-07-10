@@ -85,6 +85,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnServoM = new System.Windows.Forms.Button();
             this.btnServoP = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbxMic = new System.Windows.Forms.TextBox();
+            this.pgbMic = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -109,7 +112,7 @@
             this.groupBox1.Controls.Add(this.btnConnect);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbxSerialport);
-            this.groupBox1.Location = new System.Drawing.Point(28, 12);
+            this.groupBox1.Location = new System.Drawing.Point(28, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(596, 77);
             this.groupBox1.TabIndex = 0;
@@ -158,7 +161,7 @@
             // 
             this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Location = new System.Drawing.Point(28, 95);
+            this.groupBox2.Location = new System.Drawing.Point(28, 79);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(301, 244);
             this.groupBox2.TabIndex = 1;
@@ -271,7 +274,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblTB);
             this.groupBox3.Controls.Add(this.lblPB);
-            this.groupBox3.Location = new System.Drawing.Point(327, 95);
+            this.groupBox3.Location = new System.Drawing.Point(327, 79);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(297, 244);
             this.groupBox3.TabIndex = 1;
@@ -350,6 +353,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.pgbMic);
             this.groupBox6.Controls.Add(this.pgbHumi);
             this.groupBox6.Controls.Add(this.pgbTemp);
             this.groupBox6.Controls.Add(this.pgbHall);
@@ -357,19 +361,21 @@
             this.groupBox6.Controls.Add(this.pgbCDS);
             this.groupBox6.Controls.Add(this.btnT2Off);
             this.groupBox6.Controls.Add(this.btnT2On);
+            this.groupBox6.Controls.Add(this.tbxMic);
             this.groupBox6.Controls.Add(this.tbxHumi);
             this.groupBox6.Controls.Add(this.tbxTemp);
             this.groupBox6.Controls.Add(this.tbxHall);
             this.groupBox6.Controls.Add(this.tbxPoten);
+            this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.tbxCDS);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Location = new System.Drawing.Point(28, 345);
+            this.groupBox6.Location = new System.Drawing.Point(28, 323);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(596, 211);
+            this.groupBox6.Size = new System.Drawing.Size(669, 205);
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Analog Data";
@@ -412,7 +418,7 @@
             // 
             // btnT2Off
             // 
-            this.btnT2Off.Location = new System.Drawing.Point(185, 174);
+            this.btnT2Off.Location = new System.Drawing.Point(566, 117);
             this.btnT2Off.Name = "btnT2Off";
             this.btnT2Off.Size = new System.Drawing.Size(80, 31);
             this.btnT2Off.TabIndex = 6;
@@ -422,7 +428,7 @@
             // 
             // btnT2On
             // 
-            this.btnT2On.Location = new System.Drawing.Point(44, 174);
+            this.btnT2On.Location = new System.Drawing.Point(566, 62);
             this.btnT2On.Name = "btnT2On";
             this.btnT2On.Size = new System.Drawing.Size(80, 31);
             this.btnT2On.TabIndex = 6;
@@ -518,7 +524,7 @@
             // 
             this.groupBox7.Controls.Add(this.tbxEcho);
             this.groupBox7.Controls.Add(this.btnEcho);
-            this.groupBox7.Location = new System.Drawing.Point(631, 13);
+            this.groupBox7.Location = new System.Drawing.Point(631, 3);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(95, 106);
             this.groupBox7.TabIndex = 3;
@@ -549,9 +555,9 @@
             // 
             this.groupBox8.Controls.Add(this.tbxLCDWrite);
             this.groupBox8.Controls.Add(this.btnWrite);
-            this.groupBox8.Location = new System.Drawing.Point(631, 140);
+            this.groupBox8.Location = new System.Drawing.Point(631, 122);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(211, 112);
+            this.groupBox8.Size = new System.Drawing.Size(294, 112);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "LCD Write (한글X)";
@@ -564,13 +570,13 @@
             this.tbxLCDWrite.MaxLength = 20;
             this.tbxLCDWrite.Multiline = true;
             this.tbxLCDWrite.Name = "tbxLCDWrite";
-            this.tbxLCDWrite.Size = new System.Drawing.Size(215, 48);
+            this.tbxLCDWrite.Size = new System.Drawing.Size(294, 48);
             this.tbxLCDWrite.TabIndex = 1;
             // 
             // btnWrite
             // 
             this.btnWrite.Font = new System.Drawing.Font("굴림", 11F);
-            this.btnWrite.Location = new System.Drawing.Point(65, 74);
+            this.btnWrite.Location = new System.Drawing.Point(107, 77);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(75, 24);
             this.btnWrite.TabIndex = 0;
@@ -584,9 +590,9 @@
             this.groupBox9.Controls.Add(this.label12);
             this.groupBox9.Controls.Add(this.btnServoM);
             this.groupBox9.Controls.Add(this.btnServoP);
-            this.groupBox9.Location = new System.Drawing.Point(630, 275);
+            this.groupBox9.Location = new System.Drawing.Point(732, 4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(193, 100);
+            this.groupBox9.Size = new System.Drawing.Size(193, 105);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Servo Control";
@@ -631,11 +637,34 @@
             this.btnServoP.UseVisualStyleBackColor = true;
             this.btnServoP.Click += new System.EventHandler(this.btnServoP_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(41, 176);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 12);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Mic(소리) :";
+            // 
+            // tbxMic
+            // 
+            this.tbxMic.Location = new System.Drawing.Point(116, 171);
+            this.tbxMic.Name = "tbxMic";
+            this.tbxMic.Size = new System.Drawing.Size(185, 21);
+            this.tbxMic.TabIndex = 1;
+            // 
+            // pgbMic
+            // 
+            this.pgbMic.Location = new System.Drawing.Point(301, 171);
+            this.pgbMic.Name = "pgbMic";
+            this.pgbMic.Size = new System.Drawing.Size(259, 23);
+            this.pgbMic.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 568);
+            this.ClientSize = new System.Drawing.Size(939, 568);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -727,6 +756,9 @@
         private System.Windows.Forms.Button btnServoP;
         private System.Windows.Forms.TextBox tbxServo;
         private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.ProgressBar pgbMic;
+        private System.Windows.Forms.TextBox tbxMic;
+        private System.Windows.Forms.Label label13;
     }
 }
 

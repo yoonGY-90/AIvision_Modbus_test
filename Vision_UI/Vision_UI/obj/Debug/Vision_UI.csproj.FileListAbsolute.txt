@@ -13,3 +13,4 @@ C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\bin\Debug\Cognex.
 C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.csproj.Up2Date
 C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.exe
 C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.pdb
+C:\Users\User\Desktop\AIvision_Modbus_test\Vision_UI\Vision_UI\obj\Debug\Vision_UI.exe.config

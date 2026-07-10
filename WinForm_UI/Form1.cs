@@ -211,8 +211,9 @@ namespace CordingArrayKitMoudbusRTU
                 tbxHall.Text = (Analogdata[4]).ToString("N2");
                 pgbHall.Value = Convert.ToInt16(Analogdata[4]);
 
-
-
+                var Micdata = _master.ReadHoldingRegisters(1, 32, 1);
+                tbxMic.Text = (Micdata[0]).ToString("N2");
+                pgbMic.Value = Convert.ToInt16(Micdata[0]);
             }
         }
 
