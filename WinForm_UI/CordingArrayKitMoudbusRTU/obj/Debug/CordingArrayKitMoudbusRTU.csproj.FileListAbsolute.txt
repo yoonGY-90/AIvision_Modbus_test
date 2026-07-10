@@ -11,3 +11,16 @@ C:\Users\User\Desktop\gy\CordingArrayKitMoudbusRTU\CordingArrayKitMoudbusRTU\bin
 C:\Users\User\Desktop\gy\CordingArrayKitMoudbusRTU\CordingArrayKitMoudbusRTU\obj\Debug\CordingA.17EB9A01.Up2Date
 C:\Users\User\Desktop\gy\CordingArrayKitMoudbusRTU\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.exe
 C:\Users\User\Desktop\gy\CordingArrayKitMoudbusRTU\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.pdb
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\bin\Debug\CordingArrayKitMoudbusRTU.exe.config
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\bin\Debug\CordingArrayKitMoudbusRTU.exe
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\bin\Debug\CordingArrayKitMoudbusRTU.pdb
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\bin\Debug\NModbus4.dll
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\bin\Debug\NModbus4.xml
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.Form1.resources
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.Properties.Resources.resources
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.csproj.GenerateResource.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingA.17EB9A01.Up2Date
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.exe
+C:\Users\User\Desktop\AIvision_Modbus_test\WinForm_UI\CordingArrayKitMoudbusRTU\obj\Debug\CordingArrayKitMoudbusRTU.pdb

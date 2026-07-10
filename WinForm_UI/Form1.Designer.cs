@@ -74,6 +74,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tbxEcho = new System.Windows.Forms.TextBox();
+            this.btnEcho = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -83,6 +93,9 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -500,11 +513,114 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.tbxEcho);
+            this.groupBox7.Controls.Add(this.btnEcho);
+            this.groupBox7.Location = new System.Drawing.Point(631, 13);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(95, 106);
+            this.groupBox7.TabIndex = 3;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Echo Control";
+            // 
+            // tbxEcho
+            // 
+            this.tbxEcho.Font = new System.Drawing.Font("굴림", 11F);
+            this.tbxEcho.Location = new System.Drawing.Point(9, 30);
+            this.tbxEcho.Name = "tbxEcho";
+            this.tbxEcho.Size = new System.Drawing.Size(75, 24);
+            this.tbxEcho.TabIndex = 1;
+            this.tbxEcho.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnEcho
+            // 
+            this.btnEcho.Font = new System.Drawing.Font("굴림", 11F);
+            this.btnEcho.Location = new System.Drawing.Point(9, 58);
+            this.btnEcho.Name = "btnEcho";
+            this.btnEcho.Size = new System.Drawing.Size(75, 24);
+            this.btnEcho.TabIndex = 0;
+            this.btnEcho.Text = "측정";
+            this.btnEcho.UseVisualStyleBackColor = true;
+            this.btnEcho.Click += new System.EventHandler(this.btnEcho_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.textBox2);
+            this.groupBox8.Location = new System.Drawing.Point(631, 140);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(211, 71);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "LCD Write";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("굴림", 10F);
+            this.textBox2.Location = new System.Drawing.Point(1, 33);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(215, 23);
+            this.textBox2.TabIndex = 1;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.textBox1);
+            this.groupBox9.Controls.Add(this.label12);
+            this.groupBox9.Controls.Add(this.button3);
+            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Location = new System.Drawing.Point(630, 239);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(193, 100);
+            this.groupBox9.TabIndex = 3;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Servo Control";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("굴림", 11F);
+            this.label12.Location = new System.Drawing.Point(8, 34);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 15);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "현재 각도 : ";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("굴림", 11F);
+            this.button3.Location = new System.Drawing.Point(108, 63);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "-";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("굴림", 11F);
+            this.button2.Location = new System.Drawing.Point(6, 63);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 11F);
+            this.textBox1.Location = new System.Drawing.Point(92, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(91, 24);
+            this.textBox1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 568);
+            this.ClientSize = new System.Drawing.Size(893, 568);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -525,6 +641,12 @@
             this.groupBox3.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -576,6 +698,16 @@
         private System.Windows.Forms.ProgressBar pgbHall;
         private System.Windows.Forms.ProgressBar pgbPoten;
         private System.Windows.Forms.ProgressBar pgbCDS;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox tbxEcho;
+        private System.Windows.Forms.Button btnEcho;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

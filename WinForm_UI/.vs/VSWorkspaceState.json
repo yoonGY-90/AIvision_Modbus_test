@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CordingArrayKitMoudbusRTU",
+    "\\packages"
   ],
-  "SelectedNode": "\\CordingArrayKitMoudbusRTU.slnx",
+  "SelectedNode": "\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

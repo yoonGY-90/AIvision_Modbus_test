@@ -214,5 +214,14 @@ namespace CordingArrayKitMoudbusRTU
                 
             }
         }
+
+        private void btnEcho_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                var Echodata = _master.ReadHoldingRegisters(1, 8, 1);
+                tbxEcho.Text = Echodata[0].ToString() + "cm";
+            }
+        }
     }    
 }
