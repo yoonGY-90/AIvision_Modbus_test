@@ -78,12 +78,13 @@
             this.tbxEcho = new System.Windows.Forms.TextBox();
             this.btnEcho = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxLCDWrite = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnWrite = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -546,21 +547,25 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox2);
+            this.groupBox8.Controls.Add(this.tbxLCDWrite);
+            this.groupBox8.Controls.Add(this.btnWrite);
             this.groupBox8.Location = new System.Drawing.Point(631, 140);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(211, 71);
+            this.groupBox8.Size = new System.Drawing.Size(211, 112);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "LCD Write";
+            this.groupBox8.Text = "LCD Write (한글X)";
             // 
-            // textBox2
+            // tbxLCDWrite
             // 
-            this.textBox2.Font = new System.Drawing.Font("굴림", 10F);
-            this.textBox2.Location = new System.Drawing.Point(1, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(215, 23);
-            this.textBox2.TabIndex = 1;
+            this.tbxLCDWrite.AcceptsReturn = true;
+            this.tbxLCDWrite.Font = new System.Drawing.Font("굴림", 10F);
+            this.tbxLCDWrite.Location = new System.Drawing.Point(0, 20);
+            this.tbxLCDWrite.MaxLength = 20;
+            this.tbxLCDWrite.Multiline = true;
+            this.tbxLCDWrite.Name = "tbxLCDWrite";
+            this.tbxLCDWrite.Size = new System.Drawing.Size(215, 48);
+            this.tbxLCDWrite.TabIndex = 1;
             // 
             // groupBox9
             // 
@@ -568,12 +573,20 @@
             this.groupBox9.Controls.Add(this.label12);
             this.groupBox9.Controls.Add(this.button3);
             this.groupBox9.Controls.Add(this.button2);
-            this.groupBox9.Location = new System.Drawing.Point(630, 239);
+            this.groupBox9.Location = new System.Drawing.Point(630, 275);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(193, 100);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Servo Control";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("굴림", 11F);
+            this.textBox1.Location = new System.Drawing.Point(92, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(91, 24);
+            this.textBox1.TabIndex = 1;
             // 
             // label12
             // 
@@ -605,13 +618,16 @@
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnWrite
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 11F);
-            this.textBox1.Location = new System.Drawing.Point(92, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 24);
-            this.textBox1.TabIndex = 1;
+            this.btnWrite.Font = new System.Drawing.Font("굴림", 11F);
+            this.btnWrite.Location = new System.Drawing.Point(65, 74);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(75, 24);
+            this.btnWrite.TabIndex = 0;
+            this.btnWrite.Text = "출력";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
             // Form1
             // 
@@ -703,11 +719,12 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.TextBox tbxEcho;
         private System.Windows.Forms.Button btnEcho;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxLCDWrite;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnWrite;
     }
 }
 

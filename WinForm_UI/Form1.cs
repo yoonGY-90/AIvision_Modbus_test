@@ -71,6 +71,7 @@ namespace CordingArrayKitMoudbusRTU
             btnDisconnect.Text = "Disconnected";
             btnConnect.Enabled = true;
             btnDisconnect.Enabled = false;
+            Close();
         }
 
         private void btnLEDOn_Click(object sender, EventArgs e)
@@ -124,27 +125,27 @@ namespace CordingArrayKitMoudbusRTU
             {
                 var btn_temp = _master.ReadInputs(1, 3, 2);
                 // btn_temp[0] 푸쉬버튼의 상태값
-                if (btn_temp[0]) 
-                    {
-                        lblPB.BackColor = Color.DarkRed;
-                    }
-                    else
-                    {
-                        lblPB.BackColor = Color.BlueViolet;
-                    }
+                if (btn_temp[0])
+                {
+                    lblPB.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    lblPB.BackColor = Color.BlueViolet;
+                }
 
-                    if (btn_temp[1])
-                    {
-                        
-                        lblTB.BackColor = Color.DarkRed;
-                    }
-                    else
-                        {
-                            lblTB.BackColor = Color.BlueViolet;
-                        }
-                    
+                if (btn_temp[1])
+                {
+
+                    lblTB.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    lblTB.BackColor = Color.BlueViolet;
+                }
+
             }
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -211,7 +212,7 @@ namespace CordingArrayKitMoudbusRTU
                 pgbHall.Value = Convert.ToInt16(Analogdata[4]);
 
 
-                
+
             }
         }
 
@@ -223,5 +224,36 @@ namespace CordingArrayKitMoudbusRTU
                 tbxEcho.Text = Echodata[0].ToString() + "cm";
             }
         }
-    }    
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+            if (_port.IsOpen)
+            {
+                string[] lines = tbxLCDWrite.Lines;
+                string firstLine = (lines.Length > 0) ? lines[0] : "";
+                string secondLine = (lines.Length > 1) ? lines[1] : "";
+
+                // 15자 칸 크기에 맞게 뒤에 빈 공백(" ")을 채워주는 작업 (LCD 잔상 제거용)
+                firstLine = firstLine.PadRight(10, ' ');
+                secondLine = secondLine.PadRight(10, ' ');
+
+                // --- ⭐️ 핵심: 문자열(string)을 모드버스용 숫자 배열(ushort[])로 변환 ---
+                ushort[] firstData = new ushort[10];
+                ushort[] secondData = new ushort[10];
+
+                for (int i = 0; i < 10; i++)
+                {
+                    firstData[i] = (ushort)firstLine[i];   // 글자 한 칸을 아스키코드 숫자로 변환
+                    secondData[i] = (ushort)secondLine[i];
+                }
+
+                // --- 🚀 모드버스 전송 (첫 줄은 9번방부터, 둘째 줄은 30번방부터) ---
+                // 국번 1, 시작주소 9, 데이터 배열(10칸짜리) 전송
+                _master.WriteMultipleRegisters(1, 9, firstData);
+
+                // 데이터가 겹치지 않게 둘째 줄은 30번 주소부터 전송
+                _master.WriteMultipleRegisters(1, 20, secondData);
+            }
+        }
+    }
 }
